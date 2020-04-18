@@ -11,3 +11,173 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* .app-container{
+  margin-left: 100px;
+  margin-right: 100px;
+} */
+
+
+/* NavBar  */
+.navbar a:hover {
+  border-color: #fff;
+  opacity: 0.7;
+}
+
+.navbar.bg-dark {
+  background-image: linear-gradient(
+    135deg,
+    rgb(24, 42, 115) 0%,
+    rgb(33, 138, 174) 69%,
+    rgb(32, 167, 172) 89%
+  ) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+
+img.logo-img {
+  width: 45px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.btn-outline-info,
+.btn-outline-success {
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn-outline-info:hover {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #fff;
+  opacity: 0.7;
+}
+
+.btn-outline-success:hover {
+  background-color: rgb(24, 42, 115);
+  border-color: #fff;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+  .btn-outline-info:hover {
+    background-color: rgb(24, 42, 115);
+  }
+  .event-list{
+    order:2;
+  }
+  .event-form{
+    order: 1;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+  }
+
+ 
+
+}
+
+/* end NavBar */
+
+/* Card */
+.card {
+  margin: 1rem 0;
+  border: 1px solid rgba(34, 36, 38, 0.15) !important;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+  box-shadow: 5px 5px 5px 0 rgba(34, 36, 38, 0.15);
+  border-radius: 0.28571429rem;
+  background-color: #fff;
+  margin: 1rem 0;
+
+}
+
+.card-header {
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-title-host{
+  margin-left: 16px;
+  text-decoration: none;
+ 
+}
+
+
+.card-title-host .title-card{
+ color: #000; 
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.card-title-host p {
+  font-size: 0.84rem;
+}
+.card-title-host .hosted-card {
+  color: #157efb;
+}
+
+.card-title-host .title-card:hover, 
+.card-title-host .hosted-card:hover{
+  text-decoration: none;
+  color:#17a2b8;
+}
+
+.card-footer {
+  background-color: #fff;
+
+}
+
+ .card-img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+ }
+
+ .text-center .card-header {
+  text-align: left!important;
+}
+.car-body.card-title {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+
+}
+
+   .btn-primary {
+  color: #fff;
+  background-color: #009c95;
+  border-color: #009c95;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+.btn-primary:hover{
+  color: #fff;
+  background-color: #009c95;
+  border-color: #009c95;
+  opacity: 0.7;
+  
+}
+.list-group-flush .list-group-item .date{
+  margin-right: 10px;
+  margin-left: 5px;
+}
+.list-group-flush .list-group-item .fa-map-marker{
+  margin-left: 10px;
+}
+.list-group-flush .list-group-item .attendee-img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.event-list-attendee{
+  background: #f3f4f5;
+  color: rgba(0, 0, 0, 0.6);
+}
+/* end Card */
