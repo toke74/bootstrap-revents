@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import {Navbar, Nav, Button, Container} from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Navbar, Nav, Button, Container } from 'react-bootstrap';
 
 class NavigationBar extends Component {
-  render () {
+  render() {
     return (
-      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+      <Navbar fixed="top" collapseOnSelect expand="md" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="#home">
             <img className="logo-img" src="assets/logo.png" alt="logo" />
@@ -13,9 +13,7 @@ class NavigationBar extends Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#event">
-                Event
-              </Nav.Link>
+              <Nav.Link href="#event">Event</Nav.Link>
               <Nav.Link href="#create-event">
                 <Button size="sm" variant="outline-success">
                   Create Event
@@ -24,13 +22,16 @@ class NavigationBar extends Component {
             </Nav>
             <Nav>
               <Nav.Link href="#login">
-                <Button size="sm" variant="outline-info">Login</Button>
+                <Button size="sm" variant="outline-info">
+                  Login
+                </Button>
               </Nav.Link>
               <Nav.Link eventKey={2} href="#">
-                <Button size="sm" variant="outline-info">Sign Out</Button>
+                <Button size="sm" variant="outline-info">
+                  Sign Out
+                </Button>
               </Nav.Link>
             </Nav>
-
           </Navbar.Collapse>
         </Container>
       </Navbar>

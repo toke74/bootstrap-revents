@@ -1,22 +1,97 @@
-import React, { Component } from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
+import React, {Component} from 'react';
+import {Row, Col, Container, Button} from 'react-bootstrap';
 import EventList from '../EventList/EventList';
+import EventForm from '../EventForm/EventForm';
+
+const eventsFromDashboard = [
+  {
+    id: '1',
+    title: 'Trip to Tower of London',
+    date: '2018-03-27T11:00:00+00:00',
+    category: 'culture',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
+    city: 'London, UK',
+    venue: "Tower of London, St Katharine's & Wapping, London",
+    hostedBy: 'Bob',
+    hostPhotoURL: 'https://randomuser.me/api/portraits/men/20.jpg',
+    attendees: [
+      {
+        id: 'a',
+        name: 'Bob',
+        photoURL: 'https://randomuser.me/api/portraits/men/20.jpg',
+      },
+      {
+        id: 'b',
+        name: 'Tom',
+        photoURL: 'https://randomuser.me/api/portraits/men/22.jpg',
+      },
+    ],
+  },
+  {
+    id: '2',
+    title: 'Trip to Punch and Judy Pub',
+    date: '2018-03-28T14:00:00+00:00',
+    category: 'drinks',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
+    city: 'London, UK',
+    venue: 'Punch & Judy, Henrietta Street, London, UK',
+    hostedBy: 'Tom',
+    hostPhotoURL: 'https://randomuser.me/api/portraits/men/22.jpg',
+    attendees: [
+      {
+        id: 'b',
+        name: 'Tom',
+        photoURL: 'https://randomuser.me/api/portraits/men/22.jpg',
+      },
+      {
+        id: 'a',
+        name: 'Bob',
+        photoURL: 'https://randomuser.me/api/portraits/men/20.jpg',
+      },
+    ],
+  },
+];
 
 class EventDashboard extends Component {
-  render() {
+  state = {
+    events: eventsFromDashboard,
+    isOpen: false,
+  };
+
+  handleIsOpenToggle = () => {
+    //destracture of open from state
+    this.setState (({isOpen}) => ({
+      isOpen: !isOpen,
+    }));
+  };
+
+  // handleIsOpenToggle = () => {
+  //   this.setState (prevState => ({
+  //     isOpen: !prevState.isOpen,
+  //   }));
+  // };
+
+  render () {
+    const {events, isOpen} = this.state;
     return (
       <Container>
         <Row>
-          <Col className="event-list" md={7}>
-            <EventList />
+          <Col className="event-list" xs={8} md={7}>
+            <EventList events={events} />
           </Col>
-          <Col className="event-form" md={5}>
-            <h2>Right Column</h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-            facilis quae eveniet atque, soluta veritatis deserunt maxime
-            necessitatibus eaque nemo est id sed praesentium numquam temporibus
-            ab voluptatibus illum! Debitis!
+          <Col className="event-form" xs={4} md={5}>
+            <Button onClick={this.handleIsOpenToggle} variant="success">
+              Create Event
+            </Button>
+            {isOpen && <EventForm cancleFormOpen={this.handleIsOpenToggle} />}
+
           </Col>
+
+          {/* <Col className="event-form-btn" xs={4}>
+            <Button className="event-button">
+              Create Event
+            </Button>
+          </Col> */}
         </Row>
       </Container>
     );

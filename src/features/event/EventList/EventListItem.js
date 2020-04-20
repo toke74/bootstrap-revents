@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import { Card, ListGroup, Button } from 'react-bootstrap';
+import React, {Component} from 'react';
+import {Card, ListGroup, Button} from 'react-bootstrap';
 import EventListAttendee from './EventListAttendee';
 
 class EventListItem extends Component {
-  render() {
+  render () {
+    const {event} = this.props;
     return (
       <div>
         <Card>
@@ -12,18 +13,18 @@ class EventListItem extends Component {
               <div>
                 <img
                   className="card-img"
-                  src="https://randomuser.me/api/portraits/women/42.jpg"
+                  src={event.hostPhotoURL}
                   alt="img-header"
                 />
               </div>
               <div className="card-title-host">
                 <a className="title-card" href="#title">
-                  Event Title{' '}
+                  {event.title}
                 </a>
                 <p>
                   Hosted by{' '}
                   <a className="hosted-card" href="#hosted">
-                    hosted by
+                    {event.hostedBy}
                   </a>
                 </p>
               </div>
@@ -31,22 +32,23 @@ class EventListItem extends Component {
             <ListGroup.Item>
               <span>
                 <i className="fas fa-clock" />
-                <span className="date">date</span>
+                <span className="date">{event.date}</span>
               </span>
               |
               <span>
-                <i className="fas fa-map-marker" /> time
+                <i className="fas fa-map-marker" /> {event.venue}
               </span>
             </ListGroup.Item>
             <ListGroup.Item className="d-flex event-list-attendee">
-              <EventListAttendee />
-              <EventListAttendee />
-              <EventListAttendee />
+              {event.attendees &&
+                event.attendees.map (attendee => (
+                  <EventListAttendee key={attendee.id} attendee={attendee} />
+                ))}
             </ListGroup.Item>
             <ListGroup.Item>
-              <span>Description will go here </span>
+              <span>{event.description} </span>
               <span>
-                <Button className="float-right ">View</Button>
+                <Button className="float-right btn-event-view ">View</Button>
               </span>
             </ListGroup.Item>
           </ListGroup>
