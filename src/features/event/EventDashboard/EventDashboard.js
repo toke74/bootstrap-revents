@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Row, Col, Container, Button} from 'react-bootstrap';
 import EventList from '../EventList/EventList';
 import EventForm from '../EventForm/EventForm';
+import cuid from 'cuid';
 
 const eventsFromDashboard = [
   {
@@ -59,17 +60,30 @@ class EventDashboard extends Component {
   };
 
   handleIsOpenToggle = () => {
-    //destracture of open from state
+    /*this.setState(prevState => ({
+      isOpen: !prevState.isOpen,
+    }));*/
+
+    //OR destracture of open from state
     this.setState (({isOpen}) => ({
       isOpen: !isOpen,
     }));
   };
 
-  // handleIsOpenToggle = () => {
-  //   this.setState (prevState => ({
-  //     isOpen: !prevState.isOpen,
-  //   }));
-  // };
+  handleCreateEvent = newEvent => {
+    newEvent.id = cuid ();
+    newEvent.hostPhotoURL = '/assets/user.png';
+
+    /*this.setState((prevState)=>({
+      events:[...prevState.events, newEvent]
+    }))*/
+
+    //OR destracture  prevState
+    this.setState (({events}) => ({
+      events: [...events, newEvent],
+      isOpen: false,
+    }));
+  };
 
   render () {
     const {events, isOpen} = this.state;
@@ -83,7 +97,11 @@ class EventDashboard extends Component {
             <Button onClick={this.handleIsOpenToggle} variant="success">
               Create Event
             </Button>
-            {isOpen && <EventForm cancleFormOpen={this.handleIsOpenToggle} />}
+            {isOpen &&
+              <EventForm
+                createEvent={this.handleCreateEvent}
+                cancleFormOpen={this.handleIsOpenToggle}
+              />}
 
           </Col>
 
