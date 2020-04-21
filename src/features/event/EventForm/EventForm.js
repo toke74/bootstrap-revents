@@ -10,9 +10,21 @@ class EventForm extends Component {
     hostedBy: '',
   };
 
+  componentDidMount () {
+    if (this.props.selectedEvent !== null) {
+      this.setState ({
+        ...this.props.selectedEvent,
+      });
+    }
+  }
+
   handleFormSubmit = e => {
     e.preventDefault ();
-    this.props.createEvent (this.state);
+    if (this.state.id) {
+      this.props.updateEvent (this.state);
+    } else {
+      this.props.createEvent (this.state);
+    }
   };
 
   handleInputChange = e => {
@@ -33,7 +45,7 @@ class EventForm extends Component {
     const {title, date, city, venue, hostedBy} = this.state;
     return (
       <Card className="card-form">
-        <Form onSubmit={this.handleFormSubmit} autocomplete="off">
+        <Form onSubmit={this.handleFormSubmit} autoComplete="off">
           <Form.Group controlId="formEventTitle">
             <Form.Label>Event Title</Form.Label>
             <Form.Control

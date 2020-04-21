@@ -68,6 +68,10 @@ img.logo-img {
   
 } */
 
+.btn-event-delete {
+  margin-left: 5px;
+}
+
 @media screen and (max-width: 768px) {
   .btn-outline-info:hover {
     background-color: rgb(24, 42, 115);
@@ -78,6 +82,7 @@ img.logo-img {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
+
   .event-form-btn .event-button {
     font-size: 0.8rem;
     padding-left: 10px;
