@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Row, Col, Container, Button} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import EventList from '../EventList/EventList';
 import EventForm from '../EventForm/EventForm';
 import cuid from 'cuid';
@@ -118,34 +118,28 @@ class EventDashboard extends Component {
   render () {
     const {events, isOpen, selectedEvent} = this.state;
     return (
-      <Container>
-        <Row>
-          <Col className="event-list" xs={8} md={7}>
-            <EventList events={events} selectEvent={this.handleselectEvent} 
+      <div className="row">
+        <div className="event-form col-lg-4 order-lg-12">
+          <Button onClick={this.handleCreateFormOpen} variant="success">
+            Create Event
+          </Button>
+          {isOpen &&
+            <EventForm
+              key={selectedEvent ? selectedEvent.id : 0}
+              updateEvent={this.handleUpdateEvent}
+              selectedEvent={selectedEvent}
+              createEvent={this.handleCreateEvent}
+              cancleFormOpen={this.handleFormCancel}
+            />}
+        </div>
+        <div className="event-list col-lg-8 order-lg-1">
+          <EventList
+            events={events}
+            selectEvent={this.handleselectEvent}
             deleteEvent={this.handleDeleteEvent}
-            />
-          </Col>
-          <Col className="event-form" xs={4} md={5}>
-            <Button onClick={this.handleCreateFormOpen} variant="success">
-              Create Event
-            </Button>
-            {isOpen &&
-              <EventForm
-                key={selectedEvent ? selectedEvent.id : 0}
-                updateEvent={this.handleUpdateEvent}
-                selectedEvent={selectedEvent}
-                createEvent={this.handleCreateEvent}
-                cancleFormOpen={this.handleFormCancel}
-              />}
-          </Col>
-
-          {/* <Col className="event-form-btn" xs={4}>
-            <Button className="event-button">
-              Create Event
-            </Button>
-          </Col> */}
-        </Row>
-      </Container>
+          />
+        </div>
+      </div>
     );
   }
 }
