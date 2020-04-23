@@ -39,6 +39,9 @@ class NavigationBar extends Component {
               <Nav.Link as={NavLink} to="/people">
                 People
               </Nav.Link>
+              <Nav.Link as={NavLink} to="/test">
+                Test
+              </Nav.Link>
               <Nav.Link as={NavLink} to="createEvent">
                 <Button size="sm" variant="outline-info">
                   Create Event

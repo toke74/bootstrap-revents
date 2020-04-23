@@ -1,18 +1,22 @@
-import React, { Component, Fragment } from 'react';
-import { Container } from 'react-bootstrap';
-import { Route } from 'react-router-dom';
+import React, {Component, Fragment} from 'react';
+import {Container} from 'react-bootstrap';
+import {Route} from 'react-router-dom';
 
 import HomePage from '../../features/home/HomePage';
 import NavigationBar from '../../features/nav/NavBar/NavigationBar';
 import EventDashboard from '../../features/event/EventDashboard/EventDashboard';
-import EventDetailedPage from '../../features/event/EventDetailed/EventDetailedPage';
-import PeopleDashboard from '../../features/user/PeopleDashboard/PeopleDashboard';
-import UserDetailedPage from '../../features/user/UserDetailed/UserDetailedPage';
+import EventDetailedPage
+  from '../../features/event/EventDetailed/EventDetailedPage';
+import PeopleDashboard
+  from '../../features/user/PeopleDashboard/PeopleDashboard';
+import UserDetailedPage
+  from '../../features/user/UserDetailed/UserDetailedPage';
 import SettingDashboard from '../../features/user/Settings/SettingsDashboard';
 import EventForm from '../../features/event/EventForm/EventForm';
+import TestComponent from '../../features/test/TestComponent';
 
 class App extends Component {
-  render() {
+  render () {
     return (
       <Fragment>
         <Route exact path="/" component={HomePage} />
@@ -28,6 +32,7 @@ class App extends Component {
                 <Route path="/profile/:id" component={UserDetailedPage} />
                 <Route path="/settings" component={SettingDashboard} />
                 <Route path="/createEvent" component={EventForm} />
+                <Route path="/test" component={TestComponent} />
               </Container>
             </Fragment>
           )}
