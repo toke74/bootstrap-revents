@@ -1,18 +1,29 @@
- body {
+ /* body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(234, 234, 234) !important;
+} */
+a{
+  color: #f2f2f2;
+}
+a:hover {
+  color: #2190ae;
+  text-decoration: none;
+  background-color: transparent;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-} 
+}  */
+
+/* **************************************** */
+/* Home page  */
 .home-page {
   height: 100vh;
   position: relative;
@@ -51,6 +62,9 @@ code {
   margin-top: 6rem;
 }
 
+/* Home page end */
+
+/* **************************************** */
 /* NavBar  */
 .navbar a:hover {
   border-color: #fff;
@@ -225,6 +239,8 @@ img.logo-img {
 
 /* end NavBar */
 
+
+/* **************************************** */
 /* Card */
 .card {
   margin: 1rem 0 !important;
@@ -305,8 +321,7 @@ img.logo-img {
   margin-right: 10px;
   margin-left: 5px;
 }
-
-.list-group-flush .list-group-item .fa-map-marker {
+.list-group-flush .list-group-item .event-venue-icon {
   margin-left: 10px;
 }
 
@@ -323,6 +338,8 @@ img.logo-img {
 }
 /* end Card */
 
+
+/* **************************************** */
 /* Event Form */
 .card-form {
   padding: 15px;
@@ -355,3 +372,213 @@ img.logo-img {
   color: #000;
 }
 /* end Event Form */
+
+/* **************************************** */
+/* event detailed */
+.manage-event-btn {
+  background-color: #f2711c !important;
+
+  border-color: #f2711c !important ;
+}
+.cancle-my-place-btn {
+  background: #e0e1e2 none !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+  border-color: #e0e1e2 !important ;
+}
+
+.event-detailed-info-card .col-sm-1,
+.event-detailed-info-card .col-sm-3{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.event-detailed-info-card .col-sm-8 ,
+.event-detailed-info-card .col-sm-11 {
+   display: flex;
+  align-items: center;
+}
+
+.event-detailed-info-card .fas{
+  color: #00b5ad !important;
+  font-size: 1.35rem;
+}
+
+.event-detailed-info-card p{
+  font-size: 0.85rem;
+}
+
+
+.event-sidebar-header{
+  text-align: center;
+  background-color: #00b5ad !important;
+  color: #fff !important;
+}
+
+.attendee-sidebar-name{
+  color:#000;
+  margin-left: 10px;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+
+.corner-ribbon {
+  z-index: 100;
+  width: 200px;
+  background: #e43;
+  position: absolute;
+  top: 25px;
+  left: -50px;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+/* Ribbon start */
+
+/* common */
+.ribbon {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid #f2711c;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 70px;
+  padding: 4px 12px 6px 18px;
+  background-color: #f2711c;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-size: 0.86rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* top right*/
+.ribbon-top-right {
+  top: 15px;
+  right: -47px;
+}
+
+.ribbon span:after {
+  content: '';
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #f2711c transparent transparent transparent;
+  bottom: -1rem;
+}
+.ribbon span:after {
+  right: 0;
+  border-width: 1rem 1rem 0 0;
+}
+/* Ribbon end*/
+
+/* end event detailed */
+
+/* **************************************** */
+/* Event Detail Chat */
+.event-chat-card .event-chat-header{
+text-align: center;
+background-color: #00b5ad !important;
+color: #fff !important;
+font-size: 1.12rem;
+font-weight: 600;
+margin-bottom: 0.75rem;
+}
+
+.event-chat-card .event-chat-list-group .list-group-item {
+    border:0 !important;
+}
+
+.event-chat-list-textarea{
+  padding-bottom: 0 !important;
+}
+
+.event-chat-card .event-chat-list-group .btn-reply{
+  padding-top: 0 !important;
+}
+.event-chat-card .event-chat-list-group .event-chat-img{
+  width: 40px;
+  height: 38px;
+  margin-top: 7px;
+}
+
+.event-chat-card .event-chat-list-group .event-chat-body {
+  padding: 0 0  0.5rem 0.1rem !important;
+}
+
+.event-chat-card  .event-chat-body .card-title {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-weight: 700;
+  font-size: 0.91rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.event-chat-card  .event-chat-body .card-title:hover {
+  color: #1e719f;
+}
+
+ .event-chat-card  .event-chat-body .card-text {
+  margin: 0.1rem 0 0.12rem 0;
+  font-size: 0.87rem;
+  word-wrap: break-word;
+  color: rgba(0, 0, 0, 0.87);
+  line-height: 1.3;
+}
+ .event-chat-card  .event-chat-body .event-chat-date {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 0.875rem;
+  margin-left: 0.34rem;
+}
+
+.event-chat-card  .event-chat-body .card-link{
+  color: rgba(0, 0, 0, 0.4);
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  font-size: 0.84rem;
+
+}
+.event-chat-card  .event-chat-body .card-link:hover{
+  color: rgba(0, 0, 0, 0.8);
+
+}
+
+
+.event-chat-card .event-chat-group-item {
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+
+.event-chat-card .btn-reply .btn{
+  background-color: #2185d0;
+  color: #fff;
+  border: none;
+  padding: 0.3rem 0.8rem 0.6rem 0.8rem !important;
+  font-size: 0.93rem;
+  font-weight: 600;
+}
+
+.event-chat-card .btn-reply .btn .fa-edit{
+   /* margin-right: 0.5rem; */
+   padding: 0.3rem 0.8rem 0.3rem 0.2rem;
+   font-size: 1.03rem;
+}
+/* Event Detail Chat end */

@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {Card, ListGroup, Button} from 'react-bootstrap';
 import EventListAttendee from './EventListAttendee';
+import {Link} from 'react-router-dom';
 
 class EventListItem extends Component {
   render () {
-    const {event, selectEvent, deleteEvent} = this.props;
+    const {event, deleteEvent} = this.props;
     return (
       <div>
         <Card>
@@ -36,7 +37,9 @@ class EventListItem extends Component {
               </span>
               |
               <span>
-                <i className="fas fa-map-marker" /> {event.venue}
+                <i className="fas event-venue-icon  fa-map-marker" />
+                {' '}
+                {event.venue}
               </span>
             </ListGroup.Item>
             <ListGroup.Item className="d-flex event-list-attendee">
@@ -56,7 +59,8 @@ class EventListItem extends Component {
                   Delete
                 </Button>
                 <Button
-                  onClick={() => selectEvent (event)}
+                  as={Link}
+                  to={`/events/${event.id}`}
                   className="float-right btn-event-view "
                 >
                   View

@@ -33,7 +33,7 @@ class NavigationBar extends Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link as={NavLink} to="/events">
+              <Nav.Link as={NavLink} exact to="/events">
                 Event
               </Nav.Link>
               <Nav.Link as={NavLink} to="/people">
@@ -42,7 +42,7 @@ class NavigationBar extends Component {
               <Nav.Link as={NavLink} to="/test">
                 Test
               </Nav.Link>
-              <Nav.Link as={NavLink} to="createEvent">
+              <Nav.Link as={NavLink} to="/createEvent">
                 <Button size="sm" variant="outline-info">
                   Create Event
                 </Button>
