@@ -6,7 +6,9 @@ const initialState = [
     id: '1',
     title: 'Trip to Tower of London',
     date: '2018-03-27',
-    category: 'culture',
+    category: {
+      value: 'culture',
+    },
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
     city: 'London, UK',
@@ -30,7 +32,10 @@ const initialState = [
     id: '2',
     title: 'Trip to Punch and Judy Pub',
     date: '2018-03-28',
-    category: 'drinks',
+    category: {
+      value: 'drinks',
+    },
+
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sollicitudin ligula eu leo tincidunt, quis scelerisque magna dapibus. Sed eget ipsum vel arcu vehicula ullamcorper.',
     city: 'London, UK',

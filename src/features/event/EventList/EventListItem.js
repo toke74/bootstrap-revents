@@ -2,10 +2,15 @@ import React, {Component} from 'react';
 import {Card, ListGroup, Button} from 'react-bootstrap';
 import EventListAttendee from './EventListAttendee';
 import {Link} from 'react-router-dom';
+import moment from 'moment';
 
 class EventListItem extends Component {
+
   render () {
+    
     const {event, deleteEvent} = this.props;
+    let dateTime = moment(event.date).format('MMMM, Do YYYY, h:mm a');
+
     return (
       <div>
         <Card>
@@ -33,7 +38,7 @@ class EventListItem extends Component {
             <ListGroup.Item>
               <span>
                 <i className="fas fa-clock" />
-                <span className="date">{event.date}</span>
+                <span className="date">{dateTime}</span>
               </span>
               |
               <span>

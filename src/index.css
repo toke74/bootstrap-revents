@@ -1,4 +1,4 @@
- /* body {
+/* body {
   margin: 0;
   padding: 0;
    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,7 +8,7 @@
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(234, 234, 234) !important;
 } */
-a{
+a {
   color: #f2f2f2;
 }
 a:hover {
@@ -178,36 +178,30 @@ img.logo-img {
   width: 13rem;
 }
 .settings-card-nav .card-header {
-  background-color: #545454 ;
+  background-color: #545454;
   color: #dcddde;
   font-size: 1rem;
   font-weight: 600;
 }
 .settings-card-nav .card-header .fas {
- margin-right: 10px; 
- font-size: 1.3rem;
+  margin-right: 10px;
+  font-size: 1.3rem;
 }
 .settings-card-nav .list-group .list-group-item {
   color: rgba(0, 0, 0, 0.95);
-
 }
 .settings-card-nav .list-group .list-group-item:hover {
   text-decoration: none;
   background: rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.95);
-
-
 }
 .settings-card-nav .list-group .list-group-item.active {
   text-decoration: none;
   background: rgba(0, 0, 0, 0.05);
-  border-radius:0;
+  border-radius: 0;
   color: rgba(0, 0, 0, 0.95);
   border: 0;
-
-
 }
-
 
 .btn-event-delete {
   margin-left: 5px;
@@ -238,7 +232,6 @@ img.logo-img {
 }
 
 /* end NavBar */
-
 
 /* **************************************** */
 /* Card */
@@ -338,7 +331,6 @@ img.logo-img {
 }
 /* end Card */
 
-
 /* **************************************** */
 /* Event Form */
 .card-form {
@@ -352,6 +344,11 @@ img.logo-img {
 ::placeholder {
   color: #c7c7c7 !important;
   font-size: 0.9rem;
+}
+.css-1wa3eu0-placeholder{
+  color: #c7c7c7 !important;
+font-size: 0.9rem;
+
 }
 
 .btn-submit {
@@ -371,6 +368,24 @@ img.logo-img {
   border-color: #e0e1e2;
   color: #000;
 }
+.card-form .card-header {
+  padding-left: 0;
+  padding-bottom: 0.25rem;
+  font-size: 0.89rem;
+  font-weight: 600;
+  color: #009c95;
+}
+
+.touched-error-validate{  
+  border:1px, solid red;
+  color: red;
+}
+
+.react-datepicker__input-container .react-datepicker-ignore-onclickoutside, 
+.react-datepicker-wrapper .react-datepicker__input-container input{
+  padding:0.4rem  25.3rem 0.4rem 0.4rem !important;
+}
+
 /* end Event Form */
 
 /* **************************************** */
@@ -387,41 +402,39 @@ img.logo-img {
 }
 
 .event-detailed-info-card .col-sm-1,
-.event-detailed-info-card .col-sm-3{
- display: flex;
- align-items: center;
- justify-content: center;
+.event-detailed-info-card .col-sm-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.event-detailed-info-card .col-sm-8 ,
+.event-detailed-info-card .col-sm-8,
 .event-detailed-info-card .col-sm-11 {
-   display: flex;
+  display: flex;
   align-items: center;
 }
 
-.event-detailed-info-card .fas{
+.event-detailed-info-card .fas {
   color: #00b5ad !important;
   font-size: 1.35rem;
 }
 
-.event-detailed-info-card p{
+.event-detailed-info-card p {
   font-size: 0.85rem;
 }
 
-
-.event-sidebar-header{
+.event-sidebar-header {
   text-align: center;
   background-color: #00b5ad !important;
   color: #fff !important;
 }
 
-.attendee-sidebar-name{
-  color:#000;
+.attendee-sidebar-name {
+  color: #000;
   margin-left: 10px;
   font-weight: 600;
   font-size: 1.3rem;
 }
-
 
 .corner-ribbon {
   z-index: 100;
@@ -492,37 +505,37 @@ img.logo-img {
 
 /* **************************************** */
 /* Event Detail Chat */
-.event-chat-card .event-chat-header{
-text-align: center;
-background-color: #00b5ad !important;
-color: #fff !important;
-font-size: 1.12rem;
-font-weight: 600;
-margin-bottom: 0.75rem;
+.event-chat-card .event-chat-header {
+  text-align: center;
+  background-color: #00b5ad !important;
+  color: #fff !important;
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
 }
 
 .event-chat-card .event-chat-list-group .list-group-item {
-    border:0 !important;
+  border: 0 !important;
 }
 
-.event-chat-list-textarea{
+.event-chat-list-textarea {
   padding-bottom: 0 !important;
 }
 
-.event-chat-card .event-chat-list-group .btn-reply{
+.event-chat-card .event-chat-list-group .btn-reply {
   padding-top: 0 !important;
 }
-.event-chat-card .event-chat-list-group .event-chat-img{
+.event-chat-card .event-chat-list-group .event-chat-img {
   width: 40px;
   height: 38px;
   margin-top: 7px;
 }
 
 .event-chat-card .event-chat-list-group .event-chat-body {
-  padding: 0 0  0.5rem 0.1rem !important;
+  padding: 0 0 0.5rem 0.1rem !important;
 }
 
-.event-chat-card  .event-chat-body .card-title {
+.event-chat-card .event-chat-body .card-title {
   padding: 0 !important;
   margin: 0 !important;
   font-weight: 700;
@@ -530,35 +543,32 @@ margin-bottom: 0.75rem;
   color: rgba(0, 0, 0, 0.7);
 }
 
-.event-chat-card  .event-chat-body .card-title:hover {
+.event-chat-card .event-chat-body .card-title:hover {
   color: #1e719f;
 }
 
- .event-chat-card  .event-chat-body .card-text {
+.event-chat-card .event-chat-body .card-text {
   margin: 0.1rem 0 0.12rem 0;
   font-size: 0.87rem;
   word-wrap: break-word;
   color: rgba(0, 0, 0, 0.87);
   line-height: 1.3;
 }
- .event-chat-card  .event-chat-body .event-chat-date {
+.event-chat-card .event-chat-body .event-chat-date {
   color: rgba(0, 0, 0, 0.4);
   font-size: 0.875rem;
   margin-left: 0.34rem;
 }
 
-.event-chat-card  .event-chat-body .card-link{
+.event-chat-card .event-chat-body .card-link {
   color: rgba(0, 0, 0, 0.4);
   margin-top: 0 !important;
   padding-top: 0 !important;
   font-size: 0.84rem;
-
 }
-.event-chat-card  .event-chat-body .card-link:hover{
+.event-chat-card .event-chat-body .card-link:hover {
   color: rgba(0, 0, 0, 0.8);
-
 }
-
 
 .event-chat-card .event-chat-group-item {
   margin-bottom: 0 !important;
@@ -566,8 +576,7 @@ margin-bottom: 0.75rem;
   padding-bottom: 0 !important;
 }
 
-
-.event-chat-card .btn-reply .btn{
+.event-chat-card .btn-reply .btn {
   background-color: #2185d0;
   color: #fff;
   border: none;
@@ -576,9 +585,10 @@ margin-bottom: 0.75rem;
   font-weight: 600;
 }
 
-.event-chat-card .btn-reply .btn .fa-edit{
-   /* margin-right: 0.5rem; */
-   padding: 0.3rem 0.8rem 0.3rem 0.2rem;
-   font-size: 1.03rem;
+.event-chat-card .btn-reply .btn .fa-edit {
+  /* margin-right: 0.5rem; */
+  padding: 0.3rem 0.8rem 0.3rem 0.2rem;
+  font-size: 1.03rem;
 }
+
 /* Event Detail Chat end */

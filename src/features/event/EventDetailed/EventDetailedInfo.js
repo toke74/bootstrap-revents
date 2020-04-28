@@ -1,7 +1,10 @@
 import React from 'react';
 import { Card, ListGroup, Button, Row, Col } from 'react-bootstrap';
+import moment from 'moment';
 
 const EventDetailedInfo = ({ event }) => {
+  let dateTime = moment(event.date).format('MMMM, Do YYYY, h:mm a');
+
   return (
     <Card className="event-detailed-info-card">
       <ListGroup variant="flush">
@@ -21,7 +24,7 @@ const EventDetailedInfo = ({ event }) => {
               <i className="fas fa-calendar" />
             </Col>
             <Col sm={11}>
-              <p>{event.date}</p>
+              <p>{dateTime}</p>
             </Col>
           </Row>
         </ListGroup.Item>
