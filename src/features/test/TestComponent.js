@@ -17,7 +17,14 @@ class TestComponent extends Component {
         >
           Increment
         </Button>
-        <Button variant="danger" onClick={decrementCounter}>Decrement</Button>
+        <Button
+          style={{marginRight: '10px'}}
+          variant="danger"
+          onClick={decrementCounter}
+        >
+          Decrement
+        </Button>
+
       </div>
     );
   }

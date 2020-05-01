@@ -14,6 +14,8 @@ import UserDetailedPage
 import SettingDashboard from '../../features/user/Settings/SettingsDashboard';
 import EventForm from '../../features/event/EventForm/EventForm';
 import TestComponent from '../../features/test/TestComponent';
+import LoginForm from '../../features/auth/Login/LoginForm';
+import RegisterForm from '../../features/auth/Register/RegisterForm';
 
 class App extends Component {
   render () {
@@ -32,6 +34,8 @@ class App extends Component {
                   <Route path="/people" component={PeopleDashboard} />
                   <Route path="/profile/:id" component={UserDetailedPage} />
                   <Route path="/settings" component={SettingDashboard} />
+                  <Route path="/login" component={LoginForm} />
+                  <Route path="/register" component={RegisterForm} />
                   <Route
                     path={['/createEvent', '/manage/:id']}
                     component={EventForm}

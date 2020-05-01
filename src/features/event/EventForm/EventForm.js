@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
-import { Form, Button, Card, Row, Col } from 'react-bootstrap';
-import { createEvent, updateEvent } from '../eventActions';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Field, reduxForm} from 'redux-form';
+import {Form, Button, Card, Row, Col} from 'react-bootstrap';
+import {createEvent, updateEvent} from '../eventActions';
 import {
   composeValidators,
   combineValidators,
@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
   const eventId = ownProps.match.params.id;
   let event = {};
   if (eventId && state.events.length > 0) {
-    event = state.events.filter((event) => event.id === eventId)[0];
+    event = state.events.filter (event => event.id === eventId)[0];
   }
 
   return {
@@ -42,55 +42,55 @@ const mapDispathToProps = {
 // ];
 
 const category = [
-  { key: 'drinks', value: 'drinks', label: 'Drinks' },
-  { key: 'culture', value: 'culture', label: 'Culture' },
-  { key: 'film', value: 'film', label: 'Film' },
-  { key: 'food', value: 'food', label: 'Food' },
-  { key: 'music', value: 'music', label: 'Music' },
-  { key: 'travel', value: 'travel', label: 'Travel' },
+  {key: 'drinks', value: 'drinks', label: 'Drinks'},
+  {key: 'culture', value: 'culture', label: 'Culture'},
+  {key: 'film', value: 'film', label: 'Film'},
+  {key: 'food', value: 'food', label: 'Food'},
+  {key: 'music', value: 'music', label: 'Music'},
+  {key: 'travel', value: 'travel', label: 'Travel'},
 ];
 
-const validate = combineValidators({
-  title: isRequired({ message: 'The event title is required' }),
-  category: isRequired({ message: 'The category  is required' }),
-  description: composeValidators(
-    isRequired({ message: 'Please enter a description' }),
-    hasLengthGreaterThan(4)({
+const validate = combineValidators ({
+  title: isRequired ({message: 'The event title is required'}),
+  category: isRequired ({message: 'The category  is required'}),
+  description: composeValidators (
+    isRequired ({message: 'Please enter a description'}),
+    hasLengthGreaterThan (4) ({
       message: 'Description needs to be at least 5 characters',
     })
-  )(),
-  city: isRequired('City'),
-  venue: isRequired('Venue'),
-  date: isRequired('Date'),
+  ) (),
+  city: isRequired ('City'),
+  venue: isRequired ('Venue'),
+  date: isRequired ('Date'),
 });
 
 class EventForm extends Component {
-  onFormSubmit = (values) => {
-    console.log(values);
+  onFormSubmit = values => {
+    console.log (values);
     if (values.id) {
-      this.props.updateEvent(values);
-      this.props.history.push(`/events/${values.id}`);
+      this.props.updateEvent (values);
+      this.props.history.push (`/events/${values.id}`);
     } else {
       const newEvent = {
         ...values,
-        id: cuid(),
+        id: cuid (),
         hostPhotoURL: 'assets/user.png',
         hostedBy: 'Bob',
       };
-      this.props.createEvent(newEvent);
-      this.props.history.push(`/events/${newEvent.id}`);
+      this.props.createEvent (newEvent);
+      this.props.history.push (`/events/${newEvent.id}`);
     }
   };
 
-  render() {
-    const { pristine, submitting, invalid } = this.props;
+  render () {
+    const {pristine, submitting, invalid, initialValues, history} = this.props;
     return (
       <Row>
         <Col md={2} />
         <Col md={7}>
-          <Card className="card-form">
+          <Card className="card-form card-event-form">
             <Form
-              onSubmit={this.props.handleSubmit(this.onFormSubmit)}
+              onSubmit={this.props.handleSubmit (this.onFormSubmit)}
               autoComplete="off"
             >
               <Card.Header>EVENT DETAILS</Card.Header>
@@ -146,7 +146,11 @@ class EventForm extends Component {
                 Submit
               </Button>
               <Button
-                onClick={this.props.history.goBack}
+                onClick={
+                  initialValues.id
+                    ? () => history.push (`/events/${initialValues.id}`)
+                    : () => history.push ('/events')
+                }
                 className="btn-cancel"
                 type="submit"
               >
@@ -160,15 +164,9 @@ class EventForm extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispathToProps)(
-  reduxForm({
+export default connect (mapStateToProps, mapDispathToProps) (
+  reduxForm ({
     form: 'formEvent',
     validate,
-    intialValues: {
-      category: {
-        value: 'drinks',
-        label: 'Drinks',
-      },
-    },
-  })(EventForm)
+  }) (EventForm)
 );

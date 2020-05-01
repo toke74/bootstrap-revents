@@ -1,28 +1,28 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {Navbar, Nav, Button, Container} from 'react-bootstrap';
 import {NavLink, withRouter} from 'react-router-dom';
 import SignedOutMenu from '../Menus/SignedOutMenu';
 import SignedInMenu from '../Menus/SignedInMenu';
+import {logout} from '../../auth/authActions';
+
+const actions = {
+  logout,
+};
+
+const mapState = state => ({
+  auth: state.auth,
+});
 
 class NavigationBar extends Component {
-  state = {
-    autheticated: false,
-  };
-
-  handleSignedIn = () => {
-    this.setState ({
-      autheticated: true,
-    });
-  };
   handleSignedOut = () => {
-    this.setState ({
-      autheticated: false,
-    });
+    this.props.logout ();
     this.props.history.push ('/');
   };
 
   render () {
-    const {autheticated} = this.state;
+    const {auth} = this.props;
+    const authenticated = auth.authenticated;
     return (
       <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
@@ -48,9 +48,15 @@ class NavigationBar extends Component {
                 </Button>
               </Nav.Link>
             </Nav>
-            {autheticated
-              ? <SignedInMenu signOut={this.handleSignedOut} />
-              : <SignedOutMenu signIn={this.handleSignedIn} />}
+            {authenticated
+              ? <SignedInMenu
+                  signOut={this.handleSignedOut}
+                  currentUser={auth.currentUser}
+                />
+              : <SignedOutMenu
+                  signIn={this.handleSignIn}
+                  register={this.handleRegister}
+                />}
           </Navbar.Collapse>
         </Container>
       </Navbar>
@@ -58,4 +64,4 @@ class NavigationBar extends Component {
   }
 }
 
-export default withRouter (NavigationBar);
+export default withRouter (connect (mapState, actions) (NavigationBar));

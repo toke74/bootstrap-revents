@@ -368,12 +368,25 @@ font-size: 0.9rem;
   border-color: #e0e1e2;
   color: #000;
 }
-.card-form .card-header {
+.card-form.card-event-form .card-header {
   padding-left: 0;
   padding-bottom: 0.25rem;
   font-size: 0.89rem;
   font-weight: 600;
   color: #009c95;
+}
+
+.card-register-form .card-header,
+.card-login-form .card-header {
+  padding-left: 1.5rem;
+  padding-bottom: 0.25rem;
+  font-size: 1.29rem;
+  font-weight: 600;
+  color: #009c95;
+}
+
+.login-border{
+  border: 0 !important;
 }
 
 .touched-error-validate{  
@@ -383,7 +396,19 @@ font-size: 0.9rem;
 
 .react-datepicker__input-container .react-datepicker-ignore-onclickoutside, 
 .react-datepicker-wrapper .react-datepicker__input-container input{
-  padding:0.4rem  25.3rem 0.4rem 0.4rem !important;
+  /* padding:0.4rem  25.3rem 0.4rem 0.4rem !important; */
+  width: 100%;
+  padding-top: 0.2rem;
+  padding-bottom: 0.45rem;
+  padding-left: 0.7rem;
+  /* border: 1px solid; */
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+
+}
+
+.react-datepicker-wrapper{
+  width: 100% !important;
 }
 
 /* end Event Form */
