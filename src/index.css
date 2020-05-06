@@ -617,3 +617,15 @@ font-size: 0.9rem;
 }
 
 /* Event Detail Chat end */
+
+
+/* start loading component */
+.loading-component{
+position: absolute;
+top: 50%;
+left: 50%;
+text-align: center;
+transform: translate(-50%, -50%);
+}
+
+/* loading component end */

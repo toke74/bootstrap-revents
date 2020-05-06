@@ -7,8 +7,11 @@ import {BrowserRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {configureStore} from './app/ConfigureStore';
 import ScrollToTop from './app/common/util/ScrollToTop';
+import {loadEvent} from './features/event/eventActions';
 
 const store = configureStore ();
+store.dispatch (loadEvent ());
+
 const rootEl = document.getElementById ('root');
 
 let render = () => {

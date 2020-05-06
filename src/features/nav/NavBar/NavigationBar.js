@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
 import {Navbar, Nav, Button, Container} from 'react-bootstrap';
 import {NavLink, withRouter} from 'react-router-dom';
@@ -36,17 +36,21 @@ class NavigationBar extends Component {
               <Nav.Link as={NavLink} exact to="/events">
                 Event
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/people">
-                People
-              </Nav.Link>
-              <Nav.Link as={NavLink} to="/test">
-                Test
-              </Nav.Link>
-              <Nav.Link as={NavLink} to="/createEvent">
-                <Button size="sm" variant="outline-info">
-                  Create Event
-                </Button>
-              </Nav.Link>
+              {authenticated &&
+                <Fragment>
+                  <Nav.Link as={NavLink} to="/people">
+                    People
+                  </Nav.Link>
+                  <Nav.Link as={NavLink} to="/test">
+                    Test
+                  </Nav.Link>
+                  <Nav.Link as={NavLink} to="/createEvent">
+                    <Button size="sm" variant="outline-info">
+                      Create Event
+                    </Button>
+                  </Nav.Link>
+                </Fragment>}
+
             </Nav>
             {authenticated
               ? <SignedInMenu
