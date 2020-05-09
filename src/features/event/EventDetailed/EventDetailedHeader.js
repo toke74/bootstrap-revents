@@ -17,8 +17,7 @@ const eventImageTextStyle = {
 };
 
 const EventDetailedHeader = ({ event }) => {
-  let dateTime = moment(event.date).format('MMMM, Do YYYY, h:mm a');
-
+  let dateTime = moment(event.date).format('dddd, Do  MMMM YYYY, h:mm a');
   return (
     <Card>
       <Card.Img
@@ -30,6 +29,7 @@ const EventDetailedHeader = ({ event }) => {
         <Card.Title style={{ marginBottom: '3px' }}>{event.title}</Card.Title>
         <div className="card-text">
           <p style={{ marginBottom: '3px' }}>{dateTime}</p>
+          
           <p>
             {' '}
             Hosted By <a href="#hostedby">{event.hostedBy}</a>

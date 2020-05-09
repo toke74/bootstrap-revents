@@ -629,3 +629,25 @@ transform: translate(-50%, -50%);
 }
 
 /* loading component end */
+
+
+/* event activity*/
+.event-activity-card{
+ position: sticky;
+
+}
+.event-activity-card .event-activity-header{
+  /* background-color:  #157efb; */
+  background-image: linear-gradient(
+  135deg,
+  rgb(24, 42, 115) 0%,
+  rgb(33, 138, 174) 69%,
+  rgb(32, 167, 172) 89%
+) !important;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+ 
+}
+/* event activity end*/

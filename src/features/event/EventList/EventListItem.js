@@ -1,15 +1,13 @@
-import React, {Component} from 'react';
-import {Card, ListGroup, Button} from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Card, ListGroup, Button } from 'react-bootstrap';
 import EventListAttendee from './EventListAttendee';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 class EventListItem extends Component {
-
-  render () {
-    
-    const {event, deleteEvent} = this.props;
-    let dateTime = moment(event.date).format('MMMM, Do YYYY, h:mm a');
+  render() {
+    const { event, deleteEvent } = this.props;
+    let dateTime = moment(event.date).format('dddd, Do  MMMM YYYY, h:mm a');
 
     return (
       <div>
@@ -42,14 +40,13 @@ class EventListItem extends Component {
               </span>
               |
               <span>
-                <i className="fas event-venue-icon  fa-map-marker" />
-                {' '}
+                <i className="fas event-venue-icon  fa-map-marker" />{' '}
                 {event.venue}
               </span>
             </ListGroup.Item>
             <ListGroup.Item className="d-flex event-list-attendee">
               {event.attendees &&
-                event.attendees.map (attendee => (
+                event.attendees.map((attendee) => (
                   <EventListAttendee key={attendee.id} attendee={attendee} />
                 ))}
             </ListGroup.Item>
@@ -57,7 +54,7 @@ class EventListItem extends Component {
               <span>{event.description} </span>
               <span>
                 <Button
-                  onClick={() => deleteEvent (event.id)}
+                  onClick={() => deleteEvent(event.id)}
                   className="float-right btn-event-delete "
                   variant="danger"
                 >
